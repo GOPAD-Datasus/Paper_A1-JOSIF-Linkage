@@ -7,7 +7,7 @@
 This repository is based on our paper:  
 **"Proposal For Linkage Between Health Information Systems SIM And SINASC"**   
 Authors: Morsoleto, R. et al.  
-Presented and accept at: [JOSIF](https://josif.ifsuldeminas.edu.br/ojs/index.php/anais/index) 2025, accessible [here](https://josif.ifsuldeminas.edu.br/ojs/index.php/anais/article/view/2528)
+Presented and accepted at: [JOSIF](https://josif.ifsuldeminas.edu.br/ojs/index.php/anais/index) 2025, accessible [here](https://josif.ifsuldeminas.edu.br/ojs/index.php/anais/article/view/2528)
 
 ## 🚀 Setup
 
