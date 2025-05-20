@@ -1,5 +1,3 @@
-from cProfile import label
-
 import pandas as pd
 import recordlinkage as rl
 
