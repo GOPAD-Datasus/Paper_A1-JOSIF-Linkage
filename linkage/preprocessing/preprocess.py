@@ -29,8 +29,21 @@ def preprocess () -> pd.DataFrame | pd.DataFrame:
 
     input_fdr = 'data/input/'
 
-    sinasc = pd.read_parquet(input_fdr + 'DN2023.parquet.gzip')
-    sim = pd.read_parquet(input_fdr + 'DO2023.parquet.gzip')
+    try:
+        sinasc = pd.read_parquet(input_fdr +
+                                 'DN.parquet.gzip')
+    except FileNotFoundError:
+        error = ('Error| Missing "DN.parquet.gzip"'
+                 ' inside input folder')
+        raise RuntimeError(error)
+
+    try:
+        sim = pd.read_parquet(input_fdr +
+                              'DO.parquet.gzip')
+    except FileNotFoundError:
+        error = ('Error| Missing "DO.parquet.gzip"'
+                 ' inside input folder')
+        raise RuntimeError(error)
 
     sinasc.drop_duplicates(inplace=True)
     sim.drop_duplicates(inplace=True)
