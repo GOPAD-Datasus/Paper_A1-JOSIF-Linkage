@@ -28,7 +28,8 @@ def link (sinasc: pd.DataFrame, sim: pd.DataFrame):
     df_mort = df_mort.merge(sim, left_on='index_2',
                             right_on='index', how='left')
 
-    df_mort.to_parquet('output/SIMORTN.parquet.gzip',
+    output_fdr = 'data/output/'
+    df_mort.to_parquet(output_fdr + 'SIMORTN.parquet.gzip',
                   compression='gzip')
 
     print(f'SIM size: {len(sim)}\n'
