@@ -17,13 +17,14 @@ installed using the command:
 ```bash
 poetry install
 ```
+* Poetry is required to use the command above, for download info visit: [python-poetry.org](https://python-poetry.org/)
 
 ## ⚙ Run
 Due to the size of the files ``DN.parquet.gzip`` and ``DO.parquet.gzip``, they weren't included in the repository and may need to be manually loaded on to the project's ``data/input`` folder. 
 - The folder structure will be created during runtime for convenience.
 
 ```bash
-python __main__.py
+poetry run python main.py
 ```
 
 ## 🔮 Structure
