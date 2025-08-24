@@ -1,30 +1,28 @@
-import pandas as pd
+from pathlib import Path
 import os
 
+import pandas as pd
 
-def make_data_folder () -> None:
+
+def make_data_folder() -> None:
     """
-    Creates the temporary file structure to hold raw and
+    Creates the temporary folder structure to hold raw and
     processed files. The structure is defined below:
 
     + data: root folder
       - input: DO and DN
       - output: processed data
     """
-    data_folder = 'data'
-    if not os.path.exists(data_folder):
-        os.mkdir(data_folder)
+    data_folder = Path().cwd() / 'data'
 
-    raw_folder = data_folder + '/input'
-    if not os.path.exists(raw_folder):
-        os.mkdir(raw_folder)
+    raw_folder = data_folder / 'input'
+    os.makedirs(raw_folder, exist_ok=True)
 
-    processed_folder = data_folder + '/output'
-    if not os.path.exists(processed_folder):
-        os.mkdir(processed_folder)
+    processed_folder = data_folder / 'output'
+    os.makedirs(processed_folder, exist_ok=True)
 
 
-def preprocess () -> pd.DataFrame | pd.DataFrame:
+def preprocess() -> tuple[pd.DataFrame, pd.DataFrame]:
     make_data_folder()
 
     input_fdr = 'data/input/'

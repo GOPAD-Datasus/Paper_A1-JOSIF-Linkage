@@ -2,7 +2,7 @@ import pandas as pd
 import recordlinkage as rl
 
 
-def link (sinasc: pd.DataFrame, sim: pd.DataFrame):
+def link(sinasc: pd.DataFrame, sim: pd.DataFrame):
     ind = rl.Index()
     ind.block(['DTNASC', 'CODMUNRES'])
     candidates = ind.index(sinasc, sim)
@@ -30,7 +30,7 @@ def link (sinasc: pd.DataFrame, sim: pd.DataFrame):
 
     output_fdr = 'data/output/'
     df_mort.to_parquet(output_fdr + 'SIMORTN.parquet.gzip',
-                  compression='gzip')
+                       compression='gzip')
 
     print(f'SIM size: {len(sim)}\n'
           f'SINASC size: {len(sinasc)}\n'
